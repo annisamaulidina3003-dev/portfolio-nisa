@@ -19,4 +19,10 @@ config = laravel_config(
 
 build = laravel_build(config)
 
-php_serve(config, build, name = "portfolio-nisa", prepare = [])
+php_serve(
+    config,
+    build,
+    name = "portfolio-nisa",
+    prepare = [],
+    build_post = [write("{}/.env".format(build.app.path), "LOG_CHANNEL=stderr\n")],
+)
