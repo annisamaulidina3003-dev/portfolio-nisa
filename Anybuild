@@ -17,4 +17,4 @@ config = laravel_config(
 
 build = laravel_build(config)
 
-laravel_serve(config, build, name = "portfolio-nisa")
+laravel_serve(config, build, name = "portfolio-nisa", prepare = [])
