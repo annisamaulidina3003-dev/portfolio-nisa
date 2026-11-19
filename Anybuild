@@ -1,4 +1,5 @@
-load("//anybuild/tools:laravel.bzl", "laravel_build", "laravel_config", "laravel_serve")
+load("//anybuild/tools:laravel.bzl", "laravel_build", "laravel_config")
+load("//anybuild/tools:php.bzl", "php_serve")
 
 config = laravel_config(
     schema = 1,
@@ -13,8 +14,9 @@ config = laravel_config(
     composer_build_script = "post-update-cmd",
     php_version = "8.3.29",
     php_public_dir = "public",
+    phpix = True,
 )
 
 build = laravel_build(config)
 
-laravel_serve(config, build, name = "portfolio-nisa", prepare = [])
+php_serve(config, build, name = "portfolio-nisa", prepare = [])
