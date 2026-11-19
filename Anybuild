@@ -27,8 +27,7 @@ php_serve(
     build_post = [
         write(
             "{}/.env".format(build.app.path),
-            "APP_NAME=Portfolio Nisa\nAPP_ENV=production\nAPP_DEBUG=false\nAPP_URL=https://portfolio-nisa.wasmer.app\nLOG_CHANNEL=stderr\n",
+            "APP_NAME=PortfolioNisa\nAPP_ENV=production\nAPP_DEBUG=false\nAPP_URL=https://portfolio-nisa.wasmer.app\nLOG_CHANNEL=stderr\n",
         ),
-        run("php artisan key:generate --force --no-interaction"),
     ],
 )
